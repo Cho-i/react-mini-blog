@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import Button from "./component/ui/Button";
+import TextInput from "./component/ui/TextInput";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className="App">
+			{/*
+			글 목록 보기 기능(리스트)
+			글 보기 기능
+			댓글 보기 기능
+			글 작성 기능
+			댓글 작성 기능
+
+
+			*/}
+
+			<Button></Button>
+			<TextInput />
+		</div>
+	);
 }
 
 export default App;
