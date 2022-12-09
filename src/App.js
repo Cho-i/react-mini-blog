@@ -1,22 +1,26 @@
-import Button from "./component/ui/Button";
-import TextInput from "./component/ui/TextInput";
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import styled from "styled-components";
+import MainPage from "./component/page/MainPage";
+import PostWritePage from "./component/page/PostWritePage";
+import PostViewPage from "./component/page/PostViewPage";
 
-function App() {
+const MainTitleText = styled.p`
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+`;
+
+function App(props) {
 	return (
-		<div className="App">
-			{/*
-			글 목록 보기 기능(리스트)
-			글 보기 기능
-			댓글 보기 기능
-			글 작성 기능
-			댓글 작성 기능
-
-
-			*/}
-
-			<Button></Button>
-			<TextInput />
-		</div>
+		<>
+			<MainTitleText>미니 블로그</MainTitleText>
+			<Routes>
+				<Route index element={<MainPage />} />
+				<Route path="post-write" element={<PostWritePage />} />
+				<Route path="post/:postId" element={<PostViewPage />} />
+			</Routes>
+		</>
 	);
 }
 

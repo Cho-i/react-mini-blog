@@ -28,7 +28,7 @@ function PostList(props) {
 								onClickItem(post);
 							}}
 						/>
-					)
+					);
 				})
 			}
 		</Wrapper>

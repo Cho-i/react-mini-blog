@@ -25,8 +25,9 @@ const Container = styled.div`
 
 function PostWritePage(props) {
 	const navigate = useNavigate();
-	const [title, setTitle] = useState('');
-	const [content, setContent] = useState('');
+
+	const [title, setTitle] = useState("");
+	const [content, setContent] = useState("");
 
 	return (
 		<Wrapper>
@@ -34,21 +35,23 @@ function PostWritePage(props) {
 				<TextInput
 					height={20}
 					value={title}
-					onChange={(e) => {
-						setTitle(e.target.value);
+					onChange={(event) => {
+						setTitle(event.target.value);
 					}}
 				/>
+
 				<TextInput
 					height={480}
 					value={content}
-					onChange={(e) => {
-						setContent(e.target.value);
+					onChange={(event) => {
+						setContent(event.target.value);
 					}}
 				/>
+
 				<Button
 					title="글 작성하기"
 					onClick={() => {
-						navigate('/');
+						navigate("/");
 					}}
 				/>
 			</Container>
