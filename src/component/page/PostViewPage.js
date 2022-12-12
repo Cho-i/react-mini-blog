@@ -6,16 +6,7 @@ import TextInput from "../ui/TextInput";
 import Button from "../ui/Button";
 import data from "../../data.json";
 
-const Wrapper = styled.div`
-	padding: 16px;
-	width: calc(100% - 32px);
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-`;
-
-const Container = styled.div`
+const StyledContainer = styled.div`
 	width: 100%;
 	max-width: 720px;
 	&>*{
@@ -25,24 +16,24 @@ const Container = styled.div`
 	}
 `;
 
-const PostContainer = styled.div`
+const StyledPostContainer = styled.div`
 	padding: 8px 16px;
 	border: 1px solid grey;
 	border-radius: 8px;
 `;
 
-const TitleText = styled.p`
+const StyledTitleText = styled.p`
 	font-size: 28px;
 	font-weight: 500;
 `;
 
-const ContentText = styled.p`
+const StyledContentText = styled.p`
 	font-size: 20px;
 	line-height: 32px;
 	white-space: pre-wrap;
 `;
 
-const CommentLabel = styled.p`
+const StyledCommentLabel = styled.p`
 	font-size: 16px;
 	font-weight: 500;
 `;
@@ -55,37 +46,35 @@ function PostViewPage() {
 	});
 	const [comment, setComment] = useState('');
 	return (
-		<Wrapper>
-			<Container>
-				<Button
-					title="뒤로 가기"
-					onClick={() => {
-						navigate("/");
-					}}
-				/>
-				<PostContainer>
-					<TitleText>{post.title}</TitleText>
-					<ContentText>{post.content}</ContentText>
-				</PostContainer>
+		<StyledContainer>
+			<Button
+				title="뒤로 가기"
+				onClick={() => {
+					navigate("/");
+				}}
+			/>
+			<StyledPostContainer>
+				<StyledTitleText>{post.title}</StyledTitleText>
+				<StyledContentText>{post.content}</StyledContentText>
+			</StyledPostContainer>
 
-				<CommentLabel>댓글</CommentLabel>
-				<CommentList comments={post.comments} />
+			<StyledCommentLabel>댓글</StyledCommentLabel>
+			<CommentList comments={post.comments} />
 
-				<TextInput
-					height={40}
-					value={comment}
-					onChange={(event) => {
-						setComment(event.target.value);
-					}}
-				/>
-				<Button
-					title="댓글 작성하기"
-					onClick={() => {
-						navigate("/");
-					}}
-				/>
-			</Container>
-		</Wrapper>
+			<TextInput
+				height={40}
+				value={comment}
+				onChange={(event) => {
+					setComment(event.target.value);
+				}}
+			/>
+			<Button
+				title="댓글 작성하기"
+				onClick={() => {
+					navigate("/");
+				}}
+			/>
+		</StyledContainer>
 	);
 }
 

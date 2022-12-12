@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import CommentListItem from "./CommentListItem";
 
-const Wrapper = styled.div`
+const StyledWrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
@@ -16,7 +16,7 @@ const Wrapper = styled.div`
 
 function CommentList({ comments }) {
 	return (
-		<Wrapper>
+		<StyledWrapper>
 			{
 				comments.map((comment, i) => {
 					return (
@@ -24,7 +24,7 @@ function CommentList({ comments }) {
 					)
 				})
 			}
-		</Wrapper>
+		</StyledWrapper>
 	);
 }
 

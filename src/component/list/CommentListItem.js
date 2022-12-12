@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Wrapper = styled.div`
+const StyledWrapper = styled.div`
 	width: calc(100% - 32px);
 	padding: 8px 16px;
 	display: flex;
@@ -24,9 +24,9 @@ const ContentText = styled.p`
 
 function CommentListItem({ comment }) {
 	return (
-		<Wrapper>
+		<StyledWrapper>
 			<ContentText>{comment.content}</ContentText>
-		</Wrapper>
+		</StyledWrapper>
 	);
 }
 
