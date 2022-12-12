@@ -24,7 +24,7 @@ const Container = styled.div`
 	}
 `;
 
-function MainPage(props) {
+function MainPage() {
 	const navigate = useNavigate();
 
 	return (

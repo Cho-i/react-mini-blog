@@ -23,7 +23,7 @@ const Container = styled.div`
 	}
 `;
 
-function PostWritePage(props) {
+function PostWritePage() {
 	const navigate = useNavigate();
 
 	const [title, setTitle] = useState("");

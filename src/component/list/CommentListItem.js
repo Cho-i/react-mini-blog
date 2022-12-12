@@ -22,8 +22,7 @@ const ContentText = styled.p`
 	white-space: pre-wrap;
 `;
 
-function CommentListItem(props) {
-	const { comment } = props;
+function CommentListItem({ comment }) {
 	return (
 		<Wrapper>
 			<ContentText>{comment.content}</ContentText>

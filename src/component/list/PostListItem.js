@@ -22,8 +22,7 @@ const TitleText = styled.p`
 	font-weight: 500;
 `;
 
-function PostListItem(props) {
-	const { post, onClick } = props;
+function PostListItem({ post, onClick }) {
 	return (
 		<Wrapper onClick={onClick}>
 			<TitleText>{post.title}</TitleText>

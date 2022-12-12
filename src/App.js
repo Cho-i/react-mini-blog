@@ -11,7 +11,7 @@ const MainTitleText = styled.p`
 	text-align: center;
 `;
 
-function App(props) {
+function App() {
 	return (
 		<>
 			<MainTitleText>미니 블로그</MainTitleText>
