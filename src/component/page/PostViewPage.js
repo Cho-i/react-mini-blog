@@ -6,16 +6,6 @@ import TextInput from "../ui/TextInput";
 import Button from "../ui/Button";
 import data from "../../data.json";
 
-const StyledContainer = styled.div`
-	width: 100%;
-	max-width: 720px;
-	&>*{
-		:not(:last-child){
-			margin-bottom: 16px;
-		}
-	}
-`;
-
 const StyledPostContainer = styled.div`
 	padding: 8px 16px;
 	border: 1px solid grey;
@@ -46,7 +36,7 @@ function PostViewPage() {
 	});
 	const [comment, setComment] = useState('');
 	return (
-		<StyledContainer>
+		<>
 			<Button
 				title="뒤로 가기"
 				onClick={() => {
@@ -74,7 +64,7 @@ function PostViewPage() {
 					navigate("/");
 				}}
 			/>
-		</StyledContainer>
+		</>
 	);
 }
 

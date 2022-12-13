@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const StyledWrapper = styled.div`
+const StyledList = styled.div`
 	width: calc(100% - 32px);
 	padding: 16px;
 	display: flex;
@@ -17,16 +17,16 @@ const StyledWrapper = styled.div`
 	}
 `;
 
-const StyledTitleText = styled.p`
+const StyledListTitle = styled.p`
 	font-size: 20px;
 	font-weight: 500;
 `;
 
-function PostListItem({ post, onClick }) {
+function PostListItem({ dataPost, onClick }) {
 	return (
-		<StyledWrapper onClick={onClick}>
-			<StyledTitleText>{post.title}</StyledTitleText>
-		</StyledWrapper>
+		<StyledList onClick={onClick}>
+			<StyledListTitle>{dataPost.title}</StyledListTitle>
+		</StyledList>
 	);
 }
 

@@ -1,17 +1,17 @@
 import React from "react";
 import PostListItem from "./PostListItem";
 
-function PostList({ posts, onClickItem }) {
+function PostList({ dataPosts, onClickItem }) {
 	return (
 		<>
 			{
-				posts.map((post, i) => {
+				dataPosts.map((dataPost, i) => {
 					return (
 						<PostListItem
-							key={post.id}
-							post={post}
+							key={dataPost.id}
+							dataPost={dataPost}
 							onClick={() => {
-								onClickItem(post);
+								onClickItem(dataPost);
 							}}
 						/>
 					);
