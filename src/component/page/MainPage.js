@@ -2,9 +2,8 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import PostList from "../list/PostList";
 import Button from "../ui/Button";
-import data from "../../data.json";
 
-function MainPage() {
+function MainPage({ posts }) {
 	const navigate = useNavigate();
 
 	return (
@@ -16,12 +15,7 @@ function MainPage() {
 				}}
 			/>
 
-			<PostList
-				dataPosts={data}
-				onClickItem={(item) => {
-					navigate(`/post/${item.id}`);
-				}}
-			/>
+			<PostList posts={posts} />
 		</>
 	);
 

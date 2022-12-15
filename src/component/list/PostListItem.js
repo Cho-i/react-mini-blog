@@ -22,10 +22,10 @@ const StyledListTitle = styled.p`
 	font-weight: 500;
 `;
 
-function PostListItem({ dataPost, onClick }) {
+function PostListItem({ post, onClick }) {
 	return (
 		<StyledList onClick={onClick}>
-			<StyledListTitle>{dataPost.title}</StyledListTitle>
+			<StyledListTitle>{post.title}</StyledListTitle>
 		</StyledList>
 	);
 }

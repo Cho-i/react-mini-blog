@@ -4,7 +4,6 @@ import styled from "styled-components";
 import CommentList from "../list/CommentList";
 import TextInput from "../ui/TextInput";
 import Button from "../ui/Button";
-import data from "../../data.json";
 
 const StyledPostContainer = styled.div`
 	padding: 8px 16px;
@@ -28,12 +27,17 @@ const StyledCommentLabel = styled.p`
 	font-weight: 500;
 `;
 
-function PostViewPage() {
+function PostViewPage({ posts }) {
 	const navigate = useNavigate();
-	const { postId } = useParams();
-	const post = data.find((item) => {
-		return item.id == postId;
-	});
+	const { id } = useParams();
+	let postId = posts.find((x) => x.id == id);
+
+	//const [posts, setPosts] = useState(data);
+
+	// const post = data.find((item) => {
+	// 	return item.id == postId;
+	// });
+
 	const [comment, setComment] = useState('');
 	return (
 		<>
@@ -44,24 +48,35 @@ function PostViewPage() {
 				}}
 			/>
 			<StyledPostContainer>
-				<StyledTitleText>{post.title}</StyledTitleText>
-				<StyledContentText>{post.content}</StyledContentText>
+				{
+					console.log(posts)
+				}
+				{/* <StyledTitleText>{postId.title}</StyledTitleText>
+				<StyledContentText>{postId.content}</StyledContentText> */}
 			</StyledPostContainer>
 
 			<StyledCommentLabel>댓글</StyledCommentLabel>
-			<CommentList comments={post.comments} />
+			{/* <CommentList comments={postId.comments} /> */}
 
 			<TextInput
 				height={40}
 				value={comment}
-				onChange={(event) => {
-					setComment(event.target.value);
+				onChange={(e) => {
+					setComment(e.target.value);
 				}}
 			/>
 			<Button
 				title="댓글 작성하기"
 				onClick={() => {
-					navigate("/");
+					//navigate("/");
+					// const copy = [...post.comments]
+					// const newComment = {
+					// 	id: '',
+					// 	content: comment
+					// }
+					// copy.push(newComment)
+					// //titleCopy()
+					// console.log(post.comments)
 				}}
 			/>
 		</>

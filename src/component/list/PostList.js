@@ -1,17 +1,20 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import PostListItem from "./PostListItem";
 
-function PostList({ dataPosts, onClickItem }) {
+function PostList({ posts, onClickItem }) {
+	const navigate = useNavigate();
+
 	return (
 		<>
 			{
-				dataPosts.map((dataPost, i) => {
+				posts.map((post, i) => {
 					return (
 						<PostListItem
-							key={dataPost.id}
-							dataPost={dataPost}
+							key={post.id}
+							post={post}
 							onClick={() => {
-								onClickItem(dataPost);
+								navigate(`/post/${post.id}`);
 							}}
 						/>
 					);
