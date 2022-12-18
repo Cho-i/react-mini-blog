@@ -27,16 +27,10 @@ const StyledCommentLabel = styled.p`
 	font-weight: 500;
 `;
 
-function PostViewPage({ posts }) {
+function PostViewPage({ posts, setPosts }) {
 	const navigate = useNavigate();
 	const { id } = useParams();
-	let postId = posts.find((x) => x.id == id);
-
-	//const [posts, setPosts] = useState(data);
-
-	// const post = data.find((item) => {
-	// 	return item.id == postId;
-	// });
+	const postId = posts.find((x) => x.id == id);
 
 	const [comment, setComment] = useState('');
 	return (
@@ -48,15 +42,12 @@ function PostViewPage({ posts }) {
 				}}
 			/>
 			<StyledPostContainer>
-				{
-					console.log(posts)
-				}
-				{/* <StyledTitleText>{postId.title}</StyledTitleText>
-				<StyledContentText>{postId.content}</StyledContentText> */}
+				<StyledTitleText>{postId.title}</StyledTitleText>
+				<StyledContentText>{postId.content}</StyledContentText>
 			</StyledPostContainer>
 
 			<StyledCommentLabel>댓글</StyledCommentLabel>
-			{/* <CommentList comments={postId.comments} /> */}
+			<CommentList comments={postId.comments} />
 
 			<TextInput
 				height={40}
@@ -69,14 +60,15 @@ function PostViewPage({ posts }) {
 				title="댓글 작성하기"
 				onClick={() => {
 					//navigate("/");
-					// const copy = [...post.comments]
-					// const newComment = {
-					// 	id: '',
-					// 	content: comment
-					// }
-					// copy.push(newComment)
+					//const copy = [...postId.comments]
+					const newComment = {
+						id: '',
+						content: comment
+					}
+					//copy.push(newComment)
+					//setPosts()
 					// //titleCopy()
-					// console.log(post.comments)
+					console.log(posts[postId.id - 1])
 				}}
 			/>
 		</>

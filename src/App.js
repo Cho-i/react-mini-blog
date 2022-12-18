@@ -19,7 +19,7 @@ function App() {
 					<Routes>
 						<Route index element={<MainPage posts={posts} />} />
 						<Route path="post-write" element={<PostWritePage />} />
-						<Route path="post/:postId" element={<PostViewPage posts={posts} />} />
+						<Route path="post/:id" element={<PostViewPage posts={posts} setPosts={setPosts} />} />
 					</Routes>
 				</Container>
 			</Wrapper>
