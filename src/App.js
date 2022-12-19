@@ -6,10 +6,12 @@ import Container from "./component/layout/Container";
 import MainPage from "./component/page/MainPage";
 import PostWritePage from "./component/page/PostWritePage";
 import PostViewPage from "./component/page/PostViewPage";
+import Login from "./component/page/Login";
 import data from "./data.json";
 
 function App() {
 	const [posts, setPosts] = useState(data);
+	const [isLogin, setIsLogin] = useState(false);
 
 	return (
 		<>
@@ -17,7 +19,12 @@ function App() {
 			<Wrapper>
 				<Container>
 					<Routes>
-						<Route index element={<MainPage posts={posts} />} />
+						{
+							isLogin ?
+								<Route index element={<MainPage posts={posts} />} />
+								:
+								<Route path="/" element={<Login />} />
+						}
 						<Route path="post-write" element={<PostWritePage />} />
 						<Route path="post/:id" element={<PostViewPage posts={posts} setPosts={setPosts} />} />
 					</Routes>
